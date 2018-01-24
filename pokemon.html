@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pokémon</title>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+	</head>
+
+	<body>
+		<section ng-app="myApp" ng-controller="myCtrl">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-12">
+						<nav aria-label="breadcrumb" role="navigation" class="mt-2">
+						  <ol class="breadcrumb mb-2">
+						    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">Pokémon</li>
+						  </ol>
+						</nav>
+
+						<div class="container">
+							<div class="row">
+								<button type="button" class="btn btn-primary btn-sm btn-block my-3" ng-click="mostrar()">Carregar</button>
+								<ul class="list-group col-md-12 order-first order-md-1 pr-0">
+									<li class="list-group-item mb-1 bgTela" ng-repeat="result in allPokemons.results | orderBy:'-attack' | limitTo:6">
+										<div class="row mb-2 pb-2">
+											<div class="col-12 display-4 text-capitalize">
+												{{result.name}}
+											</div>
+										</div>
+										<div class="row my-2 py-2">
+											<div class="col-4 font-weight-bold">
+												Image:
+											</div>
+											<div class="col-8 ml-auto">
+												<img src="{{pokemonDetail.sprites.front_default}}">
+											</div>
+										</div>
+										<div class="row my-2 py-2 bgTela2">
+											<div class="col-4 font-weight-bold">
+												Attack:
+											</div>
+											<div class="col-8 ml-auto">
+												{{result.attack}}
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script src="js/jquery-3.2.1.slim.min.js"></script>
+		<script src="js/propper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/angular.min.js"></script>
+    	<script src="js/pokemon.js"></script>
+	</body>
+</html>

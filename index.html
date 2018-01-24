@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pokedex v2.0</title>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+	</head>
+
+	<body>
+		<section class="container" ng-app="myApp" ng-controller="myCtrl" ng-init="init()">
+			<div class="row mt-5">
+				<div class="col-md-12 col-12">
+					<div class="col-md-6 m-auto justify-content-md-center">
+						<img src="img/logo.png" class="img-fluid">
+					</div>
+					
+					<div class="row mt-5">
+						<div class="container">
+							<div class="col-md-6 m-auto mb-5">
+								<a class="btn btn-block itemMenu" href="pokemon.html">Pokémon</a>
+							</div>
+							<div class="col-md-6 m-auto mb-5">
+								<a class="btn btn-block itemMenu" href="pokedex.html">Pokédex</a>
+							</div>
+							<div class="col-md-6 m-auto">
+								<a class="btn btn-block itemMenu" href="bag.html">Bag</a>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</section>
+
+		<script src="js/jquery-3.2.1.slim.min.js"></script>
+		<script src="js/propper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/angular.min.js"></script>
+    	<script src="js/pokedex.js"></script>
+	</body>
+</html>

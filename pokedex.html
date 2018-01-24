@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pokédex</title>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+	</head>
+
+	<body>
+		<section ng-app="myApp" ng-controller="myCtrl">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-12">
+						<nav aria-label="breadcrumb" role="navigation" class="mt-2">
+						  <ol class="breadcrumb mb-2">
+						    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">Pokédex</li>
+						  </ol>
+						</nav>
+
+						<div class="container">
+							<div class="row">
+								<ul class="list-group col-md-3 pr-0 pr-md-2">
+									<li class="list-group-item agenda" ng-click="select(result.name)" ng-class="{active: isActive(result.name)}" ng-repeat="result in allPokemons.results">
+										<div class="row">
+											<div class="col-3">
+												<img src="img/pokeball_icon.svg" style="width: 25px">
+											</div>
+											<div class="col-9">
+												<a href="#" ng-click="getPokemonDetails(result)" class="text-capitalize">{{result.name}}</a>
+											</div>
+										</div>
+										
+										
+									</li>
+									<button type="button" class="btn btn-primary btn-sm btn-block my-3" ng-click="paginar()">Carregar mais</button>
+								</ul>
+
+								<ul class="list-group col-md-9 order-first order-md-1 pr-0">
+									<li class="list-group-item mb-1 bgTela">
+										<div class="row mb-2 pb-2">
+											<div class="col-12 display-4 text-capitalize">
+												{{pokemonDetail.species.name}} 
+											</div>
+										</div>
+										<div class="row my-2 py-2">
+											<div class="col-4 font-weight-bold">
+												Image:
+											</div>
+											<div class="col-8 ml-auto">
+												<img src="{{pokemonDetail.sprites.front_default}}">
+											</div>
+										</div>
+										<div class="row my-2 py-2 bgTela2">
+											<div class="col-4 font-weight-bold">
+												Abilities:
+											</div>
+											<div class="col-8 ml-auto text-capitalize" ng-repeat="abilities in pokemonDetail.abilities">
+												{{abilities.ability.name}}
+											</div>
+										</div>
+										<div class="row my-2 py-2">
+											<div class="col-4 font-weight-bold">
+												Stats:
+											</div>
+											<div class="col-8 ml-auto mb-2 text-capitalize" ng-repeat="stats in pokemonDetail.stats">
+												{{stats.stat.name}}: {{stats.base_stat}}
+												<div class="progress">
+												  <div class="progress-bar bg-warning" role="progressbar" style="width: {{stats.base_stat}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+											</div>
+										</div>
+										<div class="row my-2 py-2 bgTela2">
+											<div class="col-4 font-weight-bold">
+												Weight:
+											</div>
+											<div class="col-8 text-capitalize">
+												{{pokemonDetail.weight}}
+											</div>
+										</div>
+										<div class="row  my-2 py-2 d-inline-block">
+											<div class="col-4 font-weight-bold">
+												Moves:
+											</div>
+											<div class="col-8 ml-auto text-capitalize movimentos pr-0 d-inline" ng-repeat="moves in pokemonDetail.moves">
+												{{moves.move.name}}
+											</div>
+										</div>
+										<div class="row my-2 py-2 bgTela2">
+											<div class="col-4 font-weight-bold">
+												Type:
+											</div>
+											<div class="col-8 ml-auto text-capitalize" ng-repeat="types in pokemonDetail.types">
+												{{types.type.name}}
+											</div>
+										</div>
+										<div class="row my-2 py-2">
+											<div class="col-4 font-weight-bold">
+												Id: 
+											</div>
+											<div class="col-8 ml-auto">
+												# {{pokemonDetail.id}}
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script src="js/jquery-3.2.1.slim.min.js"></script>
+		<script src="js/propper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/angular.min.js"></script>
+    	<script src="js/pokedex.js"></script>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Pokemon";
+    src: url('../fonts/Pokemon.ttf')  format('truetype');
+}
+
+.movimentos:after {
+	content: ", ";
+}
+
+.agenda {
+	background: #ca5a5a;
+}
+
+.agenda:hover, .agenda:active, .agenda:focus {
+	background: #ad5252;
+}
+
+.agenda a {
+	color: #fff;
+}
+
+.agenda a:hover {
+    color: khaki;
+    text-decoration: none;
+}
+
+.list-group-item.active {
+	background-color: #ad5252;
+	border-color: #ad5252;
+}
+
+.list-group-item.active a {
+	color: khaki;
+}
+
+.itemMenu {
+    font-family: "Pokemon";
+    color: black;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 2px solid #000;
+    border-radius: 0;
+    margin-bottom: 10px;
+}
+
+.itemMenu:hover {
+	border-color: #0056b3;
+}
+
+.bgTela {
+	background-color: #a7ddeb;
+}
+
+.bgTela2 {
+	background-color: #8bc8d8;
+}
